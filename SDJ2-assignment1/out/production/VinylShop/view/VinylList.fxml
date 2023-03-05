@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.VinylListViewController">
+   <children>
+      <HBox prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <VBox prefHeight="400.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@disk.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="250.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="250.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#clickBorrow" prefWidth="70.0" style="-fx-background-color: WHITE; -fx-border-color: Green; -fx-border-radius: 20;" text="Borrow">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#clickReserve" prefWidth="70.0" style="-fx-background-color: WHITE; -fx-border-color: ORANGE; -fx-border-radius: 20;" text="Reserve">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#clickReturn" prefWidth="70.0" style="-fx-background-color: WHITE; -fx-border-color: GREY; -fx-border-radius: 20;" text="Return">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#clickRemove" prefHeight="25.0" prefWidth="70.0" style="-fx-background-color: WHITE; -fx-border-color: RED; -fx-border-radius: 20;" text="Remove">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" top="10.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="73.0" prefWidth="400.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vinyl Shop">
+                           <font>
+                              <Font name="System Bold Italic" size="40.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" right="10.0" top="25.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <ScrollPane prefHeight="230.0" prefWidth="400.0">
+                     <content>
+                        <TableView fx:id="table" prefHeight="446.0" prefWidth="399.0">
+                          <columns>
+                            <TableColumn fx:id="titleColumn" prefWidth="98.00007379055023" text="Title" />
+                            <TableColumn fx:id="artistColumn" prefWidth="75.33338165283203" text="Artist" />
+                              <TableColumn fx:id="yearColumn" prefWidth="73.3333740234375" text="Year" />
+                              <TableColumn fx:id="statusColumn" prefWidth="125.99989318847656" text="Status" />
+                          </columns>
+                        </TableView>
+                     </content>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </ScrollPane>
+                  <Label fx:id="errorLabel" text="errorLabel" textFill="RED">
+                     <VBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
